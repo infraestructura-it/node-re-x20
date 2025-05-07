@@ -1,4 +1,14 @@
 #!/bin/bash
+#!/bin/bash
+set -e
+
+# Actualizar índices de paquetes
+sudo apt-get update
+
+# Instalar herramientas de red
+sudo apt-get install -y iputils-ping net-tools traceroute
+
+
 
 echo "🚀 Bienvenido al instalador interactivo de Node-RED"
 
