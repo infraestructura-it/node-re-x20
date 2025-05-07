@@ -1,12 +1,21 @@
 #!/bin/bash
-#!/bin/bash
 set -e
 
-# Actualizar índices de paquetes
-sudo apt-get update
+echo "Bienvenido al script de configuración."
 
-# Instalar herramientas de red
-sudo apt-get install -y iputils-ping net-tools traceroute
+read -p "¿Quieres ejecutar el script tools.sh para instalar herramientas de red? (s/n): " respuesta
+if [[ "$respuesta" == "s" || "$respuesta" == "S" ]]; then
+  if [ -f "./tools.sh" ]; then
+    chmod +x ./tools.sh
+    ./tools.sh
+  else
+    echo "tools.sh no existe en el directorio actual."
+    exit 1
+  fi
+else
+  echo "tools.sh no será ejecutado."
+fi
+
 
 
 
